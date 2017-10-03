@@ -38,15 +38,42 @@ public class Converter {
         }  
     */
     
-    @SuppressWarnings("unchecked")
+   @SuppressWarnings("unchecked")
     public static String csvToJson(String csvString) {
+        
+        try {
+        
+            CSVReader reader = new CSVReader(new StringReader(csvString));
+            List<String[]> csvList = reader.readAll();
+            
+            for(String[] a : csvList) {
+                
+                for(String s : a) {
+
+                    // "s" is the next field from the next line of the CSV data.
+                    // Parse these into a new string with matches the format
+                    // of the JSON string shown in the sample.
+                    
+                    System.out.println(s + ",");
+                    
+                }
+                
+            }
+            
+        }
+        
+        catch (Exception e) {
+            //
+        }
+        
         return "";
+        
     }
     
     public static String jsonToCsv(String jsonString) {
         return "";
     }
-	
+    
 }
 
 
