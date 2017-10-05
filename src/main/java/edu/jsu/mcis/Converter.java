@@ -204,12 +204,17 @@ public class Converter {
                 rowdata = new String[elements.length + 1];
                 
                 /* Copy row header into first element of "rowdata" */
-
-                // INSERT YOUR CODE HERE
-                
+				
+                rowdata[0] = (csvrow[i]);
+				
                 /* Copy row elements into remaining elements of "rowdata" */
                 
-                // INSERT YOUR CODE HERE
+                for(int j = 1; j < rowdata.length; j++) {
+				if(j > 0) {
+					rowdata[j] = elements[j-1];
+					}
+				}
+				
                 
                 /* Write new row */
                 
